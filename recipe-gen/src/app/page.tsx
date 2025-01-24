@@ -1,5 +1,7 @@
 import Image from "next/image";
-import GoogleGenerativeAI  from "@google/generative-ai";
+//import GoogleGenerativeAI  from "@google/generative-ai";
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { Button } from "@/components/ui/button"
 
 async function generateRecipe() {
   const genAI = new GoogleGenerativeAI("YOUR_API_KEY");
@@ -8,7 +10,6 @@ async function generateRecipe() {
 
   const result = await model.generateContent(prompt);
   console.log(result.response.text());
-
 }
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
             .
           </li>
           <li>Save and see your changes instantly.</li>
+          <Button onClick={generateRecipe}>Click Me</Button>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
