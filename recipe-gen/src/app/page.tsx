@@ -1,12 +1,13 @@
+'use client'
 import Image from "next/image";
 //import GoogleGenerativeAI  from "@google/generative-ai";
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 import { Button } from "@/components/ui/button"
 
 async function generateRecipe() {
-  const genAI = new GoogleGenerativeAI("YOUR_API_KEY");
+  const genAI = new GoogleGenerativeAI("AIzaSyCFLo54wfq_cd9DwKFQJoxF855hRvCyYyQ");
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-  const prompt = "Explain how AI works";
+  const prompt = "What recipe can i make with chicken, rice, and lettuce? Give me the response as a json object as {title: string, prep: string, ingredients: [], steps: []";
 
   const result = await model.generateContent(prompt);
   console.log(result.response.text());
