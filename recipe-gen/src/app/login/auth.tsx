@@ -1,3 +1,5 @@
+
+
 'use client'
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
@@ -21,6 +23,8 @@ export default function Auth() {
           name
         })
       })
+
+      console.log(response);
     } catch (error) {
       console.log(error);
     }

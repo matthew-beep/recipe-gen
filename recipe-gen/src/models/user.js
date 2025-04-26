@@ -1,5 +1,5 @@
-import mongoose, { Schema } from 'mongoose';
+//import mongoose, { Schema } from 'mongoose';
 
-const userScehma = new Schema({
+//const userScehma = new Schema({
     
-})
+//})
